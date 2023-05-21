@@ -1,0 +1,29 @@
+Create Node
+CREATE (node:label { key1: value, key2: value, . . . . . . . . .  })   
+
+
+Print
+MATCH (n) RETURN n   
+
+
+Relationship
+MATCH (a:LabeofNode1), (b:LabeofNode2)   
+CREATE (a)-[: Relation]->(b)   
+RETURN a,b   
+
+
+LOAD CSV
+LOAD CSV FROM 'https://www.javatpoint.com/names.csv' AS line  
+CREATE (:Name { NameId: line[0], Name: line[1]})  
+
+
+There is a method to delete a node and all relationships related to that node.
+MATCH (Kohli:player{name: "Virat Kohli"}) DETACH DELETE Kohli 
+
+Delete a node
+MATCH (Kohli:person {Name: "Virat Kohli"}) DELETE Kohli   
+
+
+Delete relationship
+MATCH (Raul)-[r:PLAYER_OF]->(It)  
+DELETE r  

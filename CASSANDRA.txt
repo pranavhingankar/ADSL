@@ -1,0 +1,10 @@
+CASSANDRA
+
+
+Create Keyspace: CREATE KEYSPACE techframer WITH replication =
+{'class':'SimpleStrategy', 'replication_factor' : 1};
+Describe Keyspace: DESC KEYSPACES
+
+SELECT * FROM student;
+INSERT INTO student (student_id, student_fees,
+student_name) VALUES(I ,5000, 'Ajeet);

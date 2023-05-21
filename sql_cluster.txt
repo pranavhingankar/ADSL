@@ -1,0 +1,60 @@
+CMD (ADMINI)
+
+cd Program file
+cd mySQL
+cd Mysql server
+cd bin
+mysqld --initialize-insecure --basedir-"C:\\Program Files\\MySQL\\MySQL Server 8.0" --datadir="C:\\MysqlInstance\\Data"
+mysqld
+mysqld --install MysqlS2 --defaults-file="C:\MyInstance\my.ini"
+net start MysqlS2
+
+
+MYSQL SHELL
+\c root@localhost:3306
+var cluster =dba.createCluster("cluster")
+\c icroot@localhost:3306
+var cluster = dba.createCluster("cluster")
+cluster.status()
+
+
+\c icroot@localhost:3306
+cluster.addInstance("icroot2@localhost:3307")
+
+
+cluster.status()
+
+
+
+
+
+
+
+
+
+SANDBOX
+
+
+
+dba.deploySandboxInstance(4410);
+
+shell.connect('root@localhost:4410')
+var cluster = dba.createCluster('ass8cluster')
+cluster.status()
+
+
+dba.deploySandboxInstance(4411);
+cluster.addInstance('root@localhost:4411')
+cluster.status()
+
+
+dba.deploySandboxInstance(4412);
+cluster.addInstance('root@localhost:4412')
+cluster.status()
+
+
+
+dba.checkInstanceConfiguration('root@localhost:4410')
+dba.checkInstanceConfiguration('root@localhost:4411')
+dba.checkInstanceConfiguration('root@localhost:4412')
+
